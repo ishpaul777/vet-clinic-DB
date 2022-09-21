@@ -12,4 +12,4 @@
 
 /* inserted new column species*/
 ALTER TABLE animals
-vet_clinic-# ADD COLUMN species VARCHAR(250);
+ADD COLUMN species VARCHAR(250);
