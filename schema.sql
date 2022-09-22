@@ -10,6 +10,6 @@
      PRIMARY KEY(id)
  );
 
-/* inserted new column species*/
+ /* inserted new column species*/
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(250);
