@@ -45,3 +45,15 @@ INSERT INTO owners(full_name, age) VALUES('Bob', 45);
 INSERT INTO owners(full_name, age) VALUES('Melody Pond', 77);
 INSERT INTO owners(full_name, age) VALUES('Dean Winchester', 14);
 INSERT INTO owners(full_name, age) VALUES('Jodie Whittaker', 38);
+
+/* species */
+INSERT INTO species(name) VALUES('Digimon');
+INSERT INTO species(name) VALUES('Pokemon');
+
+/*Adding species_id*/
+UPDATE animals
+   SET species_id = (SELECT id FROM species WHERE name = 'Digimon')
+   WHERE name LIKE '%mon';
+UPDATE animals
+   SET species_id = (SELECT id FROM species WHERE name = 'Pokemon')
+   WHERE name NOT LIKE '%mon'
