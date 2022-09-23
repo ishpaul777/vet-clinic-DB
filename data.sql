@@ -38,3 +38,30 @@
  INSERT INTO animals(name, date_of_birth, escape_attempts, neutered, weight_kg)
  VALUES ('Ditto', '14-May-2022', 4, TRUE, 22);
  
+/*OWNERS*/ 
+INSERT INTO owners(full_name, age) VALUES('Sam Smith', 34);
+INSERT INTO owners(full_name, age) VALUES('Jennifer Orwell', 19);
+INSERT INTO owners(full_name, age) VALUES('Bob', 45);
+INSERT INTO owners(full_name, age) VALUES('Melody Pond', 77);
+INSERT INTO owners(full_name, age) VALUES('Dean Winchester', 14);
+INSERT INTO owners(full_name, age) VALUES('Jodie Whittaker', 38);
+
+/* species */
+INSERT INTO species(name) VALUES('Digimon');
+INSERT INTO species(name) VALUES('Pokemon');
+
+/*Adding species_id*/
+UPDATE animals
+   SET species_id = (SELECT id FROM species WHERE name = 'Digimon')
+   WHERE name LIKE '%mon';
+UPDATE animals
+   SET species_id = (SELECT id FROM species WHERE name = 'Pokemon')
+   WHERE name NOT LIKE '%mon'
+   
+
+/*Adding owner_id*/  
+UPDATE animals SET owner_id = 1 WHERE name = 'Agumon';
+UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' OR name = 'Pikachu';
+UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' OR name = 'Plantmon';
+UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
+UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
