@@ -65,3 +65,33 @@ UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' OR name = 'Pikachu';
 UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' OR name = 'Plantmon';
 UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
+
+
+/* vets */
+INSERT INTO vets(name, age, date_of_graduation) VALUES('William Tatcher', 45, '23-Apr-2000');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Maisy Smith', 26, '17-Jan-2019');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Stephanie Mendez', 64, '04-May-1981');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Jack Harkness', 38, '08-Jun-2008');
+
+
+/*Specialiazation data*/
+ INSERT INTO specialization VALUES (
+  (SELECT id FROM species WHERE name = 'Pokemon'),
+  (SELECT id FROM vets WHERE name = 'William Tatcher')
+);
+
+ INSERT INTO specialization VALUES (
+  (SELECT id FROM species WHERE name = 'Pokemon'),
+  (SELECT id FROM vets WHERE name = 'Stephanie Mendez')
+);
+
+ INSERT INTO specialization VALUES (
+  (SELECT id FROM species WHERE name = 'Digimon'),
+  (SELECT id FROM vets WHERE name = 'Stephanie Mendez')
+);
+
+ INSERT INTO specialization VALUES (
+  (SELECT id FROM species WHERE name = 'Digimon'),
+  (SELECT id FROM vets WHERE name = 'Jack Harkness')
+);
+
