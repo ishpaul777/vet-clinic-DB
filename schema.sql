@@ -65,3 +65,8 @@ CREATE TABLE visits (
 ALTER TABLE visits ADD PRIMARY KEY (animal_id, vet_id, date_of_visit);
 ALTER TABLE visits ADD CONSTRAINT animals_fk FOREIGN KEY (animal_id) REFERENCES animals (id);
 ALTER TABLE visits ADD CONSTRAINT vets_k FOREIGN KEY (vet_id) REFERENCES vets (id);
+
+/*INDEXING*/
+CREATE INDEX animals_desc ON visits(animal_id DESC);
+CREATE INDEX vets_id_desc ON visits(vets_id DESC);
+CREATE INDEX email_desc ON owners(email DESC);
