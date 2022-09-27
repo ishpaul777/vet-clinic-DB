@@ -71,8 +71,5 @@ ALTER TABLE visits ALTER COLUMN date_of_visit TYPE timestamp;
 
 ALTER TABLE visits DROP CONSTRAINT visits_pkey;
 
-/*INDEXING*/
-CREATE INDEX animals_desc ON visits(animal_id DESC);
-CREATE INDEX vets_id_desc ON visits(vets_id DESC);
-CREATE INDEX email_desc ON owners(email DESC);
+
 
