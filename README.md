@@ -19,6 +19,13 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter - [@ishpaul777](https://twitter.com/ishpaul777)
 - Linkedin - [@ishpaul777](https://www.linkedin.com/in/ishpaul-singh-264590226/)
 
+## Contributor 
+
+👤 **Seth Bizimana**
+
+- GitHub: [@Sevenpros](https://github.com/Sevenpros)
+- LinkedIn: [@Seth Bizimana](hhttps://www.linkedin.com/in/sethbizimana/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
