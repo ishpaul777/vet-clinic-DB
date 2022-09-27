@@ -38,3 +38,30 @@ ALTER TABLE animals ADD CONSTRAINT species_fk FOREIGN KEY (species_id) REFERENCE
 /*Add column owner_id which is a foreign key referencing the owners table*/
 ALTER TABLE animals ADD COLUMN owner_id INT;
 ALTER TABLE animals ADD CONSTRAINT owner_fk FOREIGN KEY (owner_id) REFERENCES owner (id)
+
+/*Vets*/
+CREATE TABLE vets (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
+    name TEXT, 
+    age INT, 
+    date_of_graduation DATE
+);
+
+/*SPECIALIZATION*/
+CREATE TABLE specialization (
+    species_id INT, 
+    vet_id INT
+);
+ALTER TABLE specialization ADD PRIMARY KEY (species_id, vet_id);
+ALTER TABLE specialization ADD CONSTRAINT species_fk FOREIGN KEY (species_id) REFERENCES species (id);
+ALTER TABLE specialization ADD CONSTRAINT vets_fk FOREIGN KEY (vet_id) REFERENCES vets (id);
+
+/*Visits*/
+CREATE TABLE visits (
+    animal_id INT, 
+    vet_id INT,
+    date_of_visit DATE
+);
+ALTER TABLE visits ADD PRIMARY KEY (animal_id, vet_id, date_of_visit);
+ALTER TABLE visits ADD CONSTRAINT animals_fk FOREIGN KEY (animal_id) REFERENCES animals (id);
+ALTER TABLE visits ADD CONSTRAINT vets_k FOREIGN KEY (vet_id) REFERENCES vets (id);
