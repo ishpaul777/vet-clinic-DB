@@ -1,6 +1,6 @@
 /*patients*/
 CREATE TABLE patients(
-  id INT,
+  id INT GENERATED ALWASY AS IDENTITY,
   name VARCHAR,
   date_of_birth DATE,
   PRIMARY KEY(id)
@@ -8,7 +8,7 @@ CREATE TABLE patients(
 
 /*Medical histories*/
 CREATE TABLE medical_histories(
-  id INT,
+  id INT GENERATED ALWASY AS IDENTITY,
   admitted_at TIMESTAMP,
   patient_id INT REFERENCES patients (id),
   status VARCHAR,
